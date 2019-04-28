@@ -5,7 +5,8 @@
   justifyContent: space-between;
   text-shadow: 5px 9px 27px -12px rgba(0, 0, 0, 0.37);
   -moz-box-shadow: 5px 9px 27px -12px rgba(0, 0, 0, 0.37);
-  box-shadow: 5px 9px 27px -12px rgba(0, 0, 0, 0.37); }
+  box-shadow: 5px 9px 27px -12px rgba(0, 0, 0, 0.37);
+  border-bottom: 1px solid gainsboro; }
   .app-header .left {
     width: 20%;
     height: 100%;

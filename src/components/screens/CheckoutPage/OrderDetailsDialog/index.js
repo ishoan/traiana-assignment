@@ -2,10 +2,14 @@ import React from "react";
 import {formStrings} from '../../../../constants/Strings';
 import './Style.css';
 
-const OrderDetailsDialog = ({orderDetails}) => {
+const OrderDetailsDialog = ({orderDetails, saladTotalPrice}) => {
   const additionalNote = orderDetails.additionalNotes.length > 0 ? orderDetails.additionalNotes : formStrings.noAdditionalNotes;
   return (
       <div className="dialog-content-container">
+        <div className="field">
+          <div className="label">{`total price:`}</div>
+          <div className="order-data text-area">{saladTotalPrice}</div>
+        </div>
         <div className="field">
           <div className="label">{`${formStrings.name}:`}</div>
           <div className="order-data">{orderDetails.name}</div>

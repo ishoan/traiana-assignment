@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import Button from '@material-ui/core/Button';
 import {getProductList, addOrRemoveIngredients} from '../../../actions/IngredientsActions';
 import {goToPage} from '../../../services/navigationService';
+import Spinner from '../../common/Spinner';
 import IngredientItem from './IngredientItem';
 import {ingredients} from '../../../constants/Strings';
 import './Style.css';
@@ -36,8 +37,7 @@ class IngredientsPage extends React.Component {
     getProductList();
   }
 
-
-  render() {
+  renderPage() {
     return (
         <div className="container">
           <div className="ingredientsPage-title">
@@ -68,6 +68,14 @@ class IngredientsPage extends React.Component {
           </div>
         </div>
     );
+  }
+
+  render() {
+    const {ingredientsList} = this.props;
+
+    return (ingredientsList && ingredientsList.length > 0 ?
+            <div>{this.renderPage()}</div> : <Spinner />
+    )
   }
 }
 

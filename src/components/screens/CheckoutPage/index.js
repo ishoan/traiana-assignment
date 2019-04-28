@@ -45,9 +45,13 @@ class CheckoutPage extends React.Component {
     this.setState({dialogToggle: !dialogToggle})
   }
 
-  componentDidMount() {
+  componentDidUpdate(prevProps) {
+    const {ingredientsList} = this.props;
+
     // after list was render it calculate the salad total price
-    this.totalSaladPriceCalc();
+    if(prevProps.ingredientsList !== ingredientsList){
+      this.totalSaladPriceCalc();
+    }
   }
 
   render() {
@@ -79,6 +83,7 @@ class CheckoutPage extends React.Component {
           >
             <OrderDetailsDialog
                 orderDetails={orderDetails}
+                saladTotalPrice={saladTotalPrice}
             />
           </DialogBox>
         </div>
