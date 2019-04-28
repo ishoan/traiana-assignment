@@ -1,0 +1,20 @@
+.dialog-content-container {
+  width: 100%;
+  height: 28vh;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
+  .dialog-content-container .field {
+    display: flex; }
+    .dialog-content-container .field .label {
+      width: 30%; }
+    .dialog-content-container .field .order-data {
+      width: 50%;
+      white-space: pre-wrap;
+      overflow-wrap: break-word; }
+      .dialog-content-container .field .order-data.text-area {
+        width: 70%;
+        height: 10vh; }
+
+/*# sourceMappingURL=Style.css.map */

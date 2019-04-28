@@ -1,0 +1,43 @@
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .ingredientsPage-title {
+    padding: 2% 0 2% 0;
+    font-size: 30px;
+    font-weight: bold;
+    color: #3e8e41;
+  }
+
+  .ingredientsPage-list-container {
+    width: 90%;
+    min-height: 80vh;
+
+    .ingredientsPage-list-content {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 1.5em;
+      padding-bottom: 2%;
+    }
+
+    .bottom-section {
+      width: 40%;
+      height: 20vh;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .button {
+        width: 47%;
+        height: 60px;
+        background-color: #009900;
+        transition: all .2s ease-in-out;
+      }
+
+      .button:hover { transform: scale(1.1); }
+    }
+  }
+}

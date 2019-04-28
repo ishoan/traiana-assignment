@@ -1,0 +1,51 @@
+.app-header {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  justifyContent: space-between;
+  text-shadow: 5px 9px 27px -12px rgba(0, 0, 0, 0.37);
+  -moz-box-shadow: 5px 9px 27px -12px rgba(0, 0, 0, 0.37);
+  box-shadow: 5px 9px 27px -12px rgba(0, 0, 0, 0.37); }
+  .app-header .left {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: transparent; }
+    .app-header .left .button-wrapper {
+      width: 80px;
+      height: 80px;
+      cursor: pointer;
+      animation: spin 4s linear infinite;
+      background-color: transparent;
+      transition: all .4s ease-in-out; }
+      .app-header .left .button-wrapper img {
+        width: 100%;
+        height: 100%;
+        background-color: transparent; }
+    .app-header .left .button-wrapper:hover {
+      transform: rotate(360deg); }
+  .app-header .middle {
+    height: 100%;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .app-header .middle .title {
+      font-size: 35px;
+      font-weight: bold;
+      text-shadow: 1px 0px 1px #CCCCCC, 0px 1px 1px #EEEEEE, 2px 1px 1px #CCCCCC, 1px 2px 1px #EEEEEE, 3px 2px 1px #CCCCCC, 2px 3px 1px #EEEEEE, 4px 3px 1px #CCCCCC, 3px 4px 1px #EEEEEE, 5px 4px 1px #CCCCCC, 4px 5px 1px #EEEEEE, 6px 5px 1px #CCCCCC, 5px 6px 1px #EEEEEE, 7px 6px 1px #CCCCCC; }
+  .app-header .right {
+    height: 100%;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .app-header .right .created-by {
+      font-size: 20px;
+      font-family: 'Pacifico', cursive;
+      text-shadow: 1px 0px 1px #CCCCCC, 0px 1px 1px #EEEEEE, 2px 1px 1px #CCCCCC, 1px 2px 1px #EEEEEE, 3px 2px 1px #CCCCCC, 2px 3px 1px #EEEEEE, 4px 3px 1px #CCCCCC, 3px 4px 1px #EEEEEE, 5px 4px 1px #CCCCCC, 4px 5px 1px #EEEEEE, 6px 5px 1px #CCCCCC, 5px 6px 1px #EEEEEE, 7px 6px 1px #CCCCCC;
+      font-weight: bold; }
+
+/*# sourceMappingURL=Style.css.map */

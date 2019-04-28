@@ -1,0 +1,55 @@
+.container {
+  width: 100%;
+  height: 87vh;
+  display: flex;
+  justify-content: space-around; }
+  .container .content-container {
+    display: flex;
+    height: 65vh;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column; }
+    .container .content-container .title {
+      font-size: 60px;
+      font-weight: bold;
+      background: transparent;
+      text-shadow: 1px 0px 1px #CCCCCC, 0px 1px 1px #EEEEEE, 2px 1px 1px #CCCCCC, 1px 2px 1px #EEEEEE, 3px 2px 1px #CCCCCC, 2px 3px 1px #EEEEEE, 4px 3px 1px #CCCCCC, 3px 4px 1px #EEEEEE, 5px 4px 1px #CCCCCC, 4px 5px 1px #EEEEEE, 6px 5px 1px #CCCCCC, 5px 6px 1px #EEEEEE, 7px 6px 1px #CCCCCC;
+      color: #3e8e41;
+      text-align: center; }
+    .container .content-container .button {
+      width: 50%;
+      height: 200px;
+      border: 1px solid;
+      border-radius: 10px;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      .container .content-container .button .button-text {
+        font-size: 35px; }
+    .container .content-container .button {
+      padding: 15px 25px;
+      font-size: 24px;
+      text-align: center;
+      cursor: pointer;
+      outline: none;
+      color: #fff;
+      font-weight: bold;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-image: url("../../../assets/images/salad-image.jpeg");
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 9px #999;
+      margin: 4px 2px;
+      opacity: 0.8;
+      transition: 0.3s; }
+    .container .content-container .button:hover {
+      opacity: 1; }
+    .container .content-container .button:active {
+      background-color: #3e8e41;
+      box-shadow: 0 5px #666;
+      transform: translateY(4px); }
+
+/*# sourceMappingURL=Style.css.map */
