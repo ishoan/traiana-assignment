@@ -8,7 +8,8 @@
   .dialog-content-container .field {
     display: flex; }
     .dialog-content-container .field .label {
-      width: 30%; }
+      width: 30%;
+      font-weight: bold; }
     .dialog-content-container .field .order-data {
       width: 50%;
       white-space: pre-wrap;

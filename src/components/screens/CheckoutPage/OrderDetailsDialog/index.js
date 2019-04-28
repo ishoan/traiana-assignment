@@ -1,5 +1,5 @@
 import React from "react";
-import {formStrings} from '../../../../constants/Strings';
+import {formStrings, ingredients} from '../../../../constants/Strings';
 import './Style.css';
 
 const OrderDetailsDialog = ({orderDetails, saladTotalPrice}) => {
@@ -7,8 +7,8 @@ const OrderDetailsDialog = ({orderDetails, saladTotalPrice}) => {
   return (
       <div className="dialog-content-container">
         <div className="field">
-          <div className="label">{`total price:`}</div>
-          <div className="order-data text-area">{saladTotalPrice}</div>
+          <div className="label">{`${ingredients.totalPrice}:`}</div>
+          <div className="order-data">{`${ingredients.currency}${saladTotalPrice}`}</div>
         </div>
         <div className="field">
           <div className="label">{`${formStrings.name}:`}</div>
