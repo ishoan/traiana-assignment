@@ -25,7 +25,7 @@ class IngredientsPage extends React.Component {
         <IngredientItem
             key={item.id}
             ingredient={item}
-            onClick={addOrRemoveIngredients}
+            onClick={(item, act) => addOrRemoveIngredients(item, act, ingredientsList)}
         />);
   }
 

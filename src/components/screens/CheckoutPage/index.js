@@ -18,7 +18,6 @@ class CheckoutPage extends React.Component {
     this.state = {
       dialogToggle: false
     };
-    props.getProductList();
   }
 
   // calculating the price of all the ingredients list
@@ -45,11 +44,18 @@ class CheckoutPage extends React.Component {
     this.setState({dialogToggle: !dialogToggle})
   }
 
-  componentDidUpdate(prevProps) {
-    const {ingredientsList} = this.props;
+  componentDidMount() {
+    const {ingredientsList, getProductList} = this.props;
 
-    // after list was render it calculate the salad total price
-    if(prevProps.ingredientsList !== ingredientsList){
+    // Handling refreshing page
+    if (ingredientsList.length === 0) {
+      getProductList();
+    }
+  }
+
+  componentDidUpdate(prevProps) {
+    // after list was render it calculate the salad total price, handling refreshing page
+    if (prevProps.saladTotalPrice === 0) {
       this.totalSaladPriceCalc();
     }
   }

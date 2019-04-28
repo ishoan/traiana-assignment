@@ -3,21 +3,25 @@ import {
     SET_INGREDIENTS_LIST
 } from '../constants/ActionTypes';
 
-let list = [];
 
 export const getProductList = () => async dispatch => {
 
   try {
-    const response = await serverConnectGet('./salad.json');
-    list = [...response.data.items];
+    let list = [];
 
-    list.forEach(item => {
-      item.amount = 0;
-      item.totalPrice = 0;
-      item.id = item.name;
-    });
+    if (JSON.parse(localStorage.getItem('ingredientList')) === null) {
 
-    if (JSON.parse(localStorage.getItem('ingredientList')) !== null) {
+      const response = await serverConnectGet('./salad.json');
+      list = [...response.data.items];
+
+      list.forEach(item => {
+        item.amount = 0;
+        item.totalPrice = 0;
+        item.id = item.name;
+      });
+
+      localStorage.setItem("ingredientList", JSON.stringify(list));
+    } else {
       list = JSON.parse(localStorage.getItem('ingredientList'))
     }
 
@@ -30,7 +34,7 @@ export const getProductList = () => async dispatch => {
   }
 };
 
-export const addOrRemoveIngredients = (act, ingredient) => {
+export const addOrRemoveIngredients = (act, ingredient, list) => {
 
   switch (act) {
     case 'inc':

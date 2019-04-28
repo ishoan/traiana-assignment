@@ -9,7 +9,8 @@
   .checkout-container .content-container {
     width: 100%;
     display: flex;
-    flex-direction: row; }
+    flex-direction: row;
+    margin-bottom: 2%; }
     .checkout-container .content-container .section {
       min-height: 50vh;
       width: 50%;
