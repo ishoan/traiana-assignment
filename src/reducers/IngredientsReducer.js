@@ -4,7 +4,8 @@ import {
 
 
 const INITIAL_STATE = {
-  ingredientsList: []
+  ingredientsList: [],
+  disableCheckoutButton: true
 };
 
 export default (state = INITIAL_STATE, action) => {

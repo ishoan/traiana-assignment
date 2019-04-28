@@ -47,6 +47,7 @@ class CheckoutPage extends React.Component {
   componentDidMount() {
     const {ingredientsList, getProductList} = this.props;
 
+    this.totalSaladPriceCalc();
     // Handling refreshing page
     if (ingredientsList.length === 0) {
       getProductList();

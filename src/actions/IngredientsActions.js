@@ -3,14 +3,12 @@ import {
     SET_INGREDIENTS_LIST
 } from '../constants/ActionTypes';
 
-
 export const getProductList = () => async dispatch => {
 
   try {
     let list = [];
 
     if (JSON.parse(localStorage.getItem('ingredientList')) === null) {
-
       const response = await serverConnectGet('./salad.json');
       list = [...response.data.items];
 
