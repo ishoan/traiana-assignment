@@ -38,6 +38,7 @@ class IngredientsPage extends React.Component {
   }
 
   renderPage() {
+    const {selectedList} = this.props;
     return (
         <div className="container">
           <div className="ingredientsPage-title">
@@ -52,6 +53,7 @@ class IngredientsPage extends React.Component {
                   className="button"
                   variant="contained"
                   color="primary"
+                  disabled={selectedList.length === 0}
                   onClick={() => this.clearSelectedIngredient()}
               >
                 {ingredients.clearSelectedIngredients}
@@ -60,6 +62,7 @@ class IngredientsPage extends React.Component {
                   className="button"
                   variant="contained"
                   color="primary"
+                  disabled={selectedList.length === 0}
                   onClick={() => goToPage('CheckoutPage')}
               >
                 {ingredients.proceedToCheckout}
@@ -88,10 +91,10 @@ const _mapDispatchToProps = dispatch => {
 
 const _mapStateToProps = state => {
   const {
-      ingredients: {ingredientsList}
+      ingredients: {ingredientsList, selectedList}
   } = state;
 
-  return {ingredientsList};
+  return {ingredientsList, selectedList};
 };
 
 export default connect(_mapStateToProps, _mapDispatchToProps)(IngredientsPage);

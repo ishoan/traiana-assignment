@@ -1,6 +1,7 @@
 import {serverConnectGet} from '../services/ServerConnection';
 import {
-    SET_INGREDIENTS_LIST
+    SET_INGREDIENTS_LIST,
+    SET_SELECTED_LIST
 } from '../constants/ActionTypes';
 
 export const getProductList = () => async dispatch => {
@@ -23,6 +24,9 @@ export const getProductList = () => async dispatch => {
       list = JSON.parse(localStorage.getItem('ingredientList'))
     }
 
+    //Keep data when refreshing
+    setSelectedList(list, dispatch);
+
     dispatch({
       type: SET_INGREDIENTS_LIST,
       payload: list
@@ -32,7 +36,20 @@ export const getProductList = () => async dispatch => {
   }
 };
 
-export const addOrRemoveIngredients = (act, ingredient, list) => {
+// Save only a list of the selected for the checkout page
+const setSelectedList = (list, dispatch) => {
+  let selectedList = list.filter(item => {
+    return item.amount > 0;
+  });
+  localStorage.setItem("selectedIngredientList", JSON.stringify(selectedList));
+
+  dispatch ({
+    type: SET_SELECTED_LIST,
+    payload: selectedList
+  });
+};
+
+export const addOrRemoveIngredients = (act, ingredient, list)  => async dispatch => {
 
   switch (act) {
     case 'inc':
@@ -50,9 +67,11 @@ export const addOrRemoveIngredients = (act, ingredient, list) => {
   let productIndex = list.findIndex(item => item.id === ingredient.id);
   list[productIndex] = ingredient;
 
+  setSelectedList(list, dispatch);
+
   localStorage.setItem("ingredientList", JSON.stringify(list));
 
-  return ({
+  dispatch ({
     type: SET_INGREDIENTS_LIST,
     payload: list
   });

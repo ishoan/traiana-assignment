@@ -31,14 +31,14 @@ const OrderDescription = ({Orders, totalPrice}) => {
 
   const renderSelectedIngredients = () => {
     return Orders.map(item => {
-      if (item.amount && item.amount > 0) {
+      // if (item.amount && item.amount > 0) {
         return (<TableRow key={item.id}>
           <CustomTableCell>{item.name}</CustomTableCell>
           <CustomTableCell>{item.amount}</CustomTableCell>
           <CustomTableCell>{`${ingredients.currency}${item.price}`}</CustomTableCell>
           <CustomTableCell>{`${ingredients.currency}${item.totalPrice}`}</CustomTableCell>
         </TableRow>);
-      }
+      // }
     });
   };
 

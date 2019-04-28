@@ -22,8 +22,8 @@ class CheckoutPage extends React.Component {
 
   // calculating the price of all the ingredients list
   totalSaladPriceCalc() {
-    const {ingredientsList, setSaladTotalPrice} = this.props;
-    setSaladTotalPrice(ingredientsList);
+    const {selectedList, setSaladTotalPrice} = this.props;
+    setSaladTotalPrice(selectedList);
   }
 
   // close the modal, clearing the storage and going back to Store landing page
@@ -45,11 +45,11 @@ class CheckoutPage extends React.Component {
   }
 
   componentDidMount() {
-    const {ingredientsList, getProductList} = this.props;
+    const {selectedList, getProductList} = this.props;
 
     this.totalSaladPriceCalc();
     // Handling refreshing page
-    if (ingredientsList.length === 0) {
+    if (selectedList.length === 0) {
       getProductList();
     }
   }
@@ -62,7 +62,7 @@ class CheckoutPage extends React.Component {
   }
 
   render() {
-    const {ingredientsList, saladTotalPrice, orderDetails} = this.props;
+    const {selectedList, saladTotalPrice, orderDetails} = this.props;
     const {dialogToggle} = this.state;
 
     return (
@@ -73,7 +73,7 @@ class CheckoutPage extends React.Component {
           <div className="content-container">
             <div className="section">
               <OrderDescription
-                  Orders={ingredientsList}
+                  Orders={selectedList}
                   totalPrice={`${ingredients.currency}${saladTotalPrice}`}
               />
             </div>
@@ -108,11 +108,11 @@ const _mapDispatchToProps = dispatch => {
 
 const _mapStateToProps = state => {
   const {
-      ingredients: {ingredientsList},
+      ingredients: {selectedList},
       checkout: {saladTotalPrice, orderDetails}
   } = state;
 
-  return {ingredientsList, saladTotalPrice, orderDetails};
+  return {selectedList, saladTotalPrice, orderDetails};
 };
 
 export default connect(_mapStateToProps, _mapDispatchToProps)(CheckoutPage);
