@@ -10,7 +10,7 @@ import CheckoutPage from './components/screens/CheckoutPage';
 
 class App extends React.Component {
 
-  constructor(props){
+  constructor(props) {
     super(props);
     setNavigation(history);
   }
@@ -22,11 +22,11 @@ class App extends React.Component {
               onClick={() => goBack()}
           />
           <Router history={history}>
-              <Switch>
-                <Route path="/" exact component={GreetingsPage} />
-                <Route path="/IngredientsPage" exact component={IngredientsPage} />
-                <Route path="/CheckoutPage" exact component={CheckoutPage} />
-              </Switch>
+            <Switch>
+              <Route path="/" exact component={GreetingsPage}/>
+              <Route path="/IngredientsPage" exact component={IngredientsPage}/>
+              <Route path="/CheckoutPage" exact component={CheckoutPage}/>
+            </Switch>
           </Router>
         </div>
     );

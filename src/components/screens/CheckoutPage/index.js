@@ -30,7 +30,6 @@ class CheckoutPage extends React.Component {
   onClickClose() {
     const {dialogToggle} = this.state;
 
-    localStorage.clear();
     this.setState({dialogToggle: !dialogToggle});
     goToPage('/');
   }
@@ -59,6 +58,11 @@ class CheckoutPage extends React.Component {
     if (prevProps.saladTotalPrice === 0) {
       this.totalSaladPriceCalc();
     }
+  }
+
+  // delete storage when we go out from the page
+  componentWillUnmount() {
+    localStorage.clear();
   }
 
   render() {
